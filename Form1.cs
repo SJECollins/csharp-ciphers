@@ -58,8 +58,6 @@ namespace Ciphers
             {
                 if (!Char.IsDigit(ch) && ch != ' ')
                 {
-                    Debug.WriteLine("Not binary");
-                    Debug.WriteLine(ch);
                     isBinary = false;
                 }
                 if (ch != '.' && ch != '-' && ch != ' ' && ch != '/')
@@ -86,7 +84,6 @@ namespace Ciphers
 
             if (isBinary)
             {
-                Debug.WriteLine("Decrypting binary");
                 binaryText = DecryptBinary(text);
             }
             else
