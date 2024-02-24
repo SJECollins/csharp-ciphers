@@ -1,6 +1,6 @@
 ﻿namespace Ciphers
 {
-    partial class Form1
+    partial class CipherForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -42,6 +42,14 @@
             encryptButton = new Button();
             resetButton = new Button();
             saveButton = new Button();
+            label6 = new Label();
+            label7 = new Label();
+            label2 = new Label();
+            label8 = new Label();
+            label5 = new Label();
+            label9 = new Label();
+            label10 = new Label();
+            label11 = new Label();
             SuspendLayout();
             // 
             // enterText
@@ -202,11 +210,100 @@
             saveButton.UseVisualStyleBackColor = true;
             saveButton.Click += SaveButton_Click;
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(632, 310);
+            label6.MaximumSize = new Size(150, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(126, 15);
+            label6.TabIndex = 16;
+            label6.Text = "Encrypt: alphanumeric";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(632, 325);
+            label7.MaximumSize = new Size(150, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(91, 15);
+            label7.TabIndex = 17;
+            label7.Text = "Decrypt: '.' '-' '/'";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(634, 225);
+            label2.MaximumSize = new Size(150, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(126, 15);
+            label2.TabIndex = 18;
+            label2.Text = "Encrypt: alphanumeric";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(633, 240);
+            label8.MaximumSize = new Size(150, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(127, 15);
+            label8.TabIndex = 19;
+            label8.Text = "Decrypt: alphanumeric";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(632, 141);
+            label5.MaximumSize = new Size(150, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(126, 15);
+            label5.TabIndex = 20;
+            label5.Text = "Encrypt: alphanumeric";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(633, 156);
+            label9.MaximumSize = new Size(150, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(127, 15);
+            label9.TabIndex = 21;
+            label9.Text = "Decrypt: alphanumeric";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(632, 395);
+            label10.MaximumSize = new Size(150, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(126, 15);
+            label10.TabIndex = 22;
+            label10.Text = "Encrypt: alphanumeric";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(632, 410);
+            label11.MaximumSize = new Size(150, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(87, 15);
+            label11.TabIndex = 23;
+            label11.Text = "Decrypt: binary";
+
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(784, 561);
+            Controls.Add(label11);
+            Controls.Add(label10);
+            Controls.Add(label9);
+            Controls.Add(label5);
+            Controls.Add(label8);
+            Controls.Add(label2);
+            Controls.Add(label7);
+            Controls.Add(label6);
             Controls.Add(saveButton);
             Controls.Add(resetButton);
             Controls.Add(encryptButton);
@@ -244,5 +341,13 @@
         private Button encryptButton;
         private Button resetButton;
         private Button saveButton;
+        private Label label6;
+        private Label label7;
+        private Label label2;
+        private Label label8;
+        private Label label5;
+        private Label label9;
+        private Label label10;
+        private Label label11;
     }
 }

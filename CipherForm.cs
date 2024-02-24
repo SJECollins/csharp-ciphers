@@ -2,7 +2,7 @@ using System.Diagnostics;
 
 namespace Ciphers
 {
-    public partial class Form1 : Form
+    public partial class CipherForm : Form
     {
         readonly String caesarAlphabet = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
         readonly String keyboardAlphabet = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
@@ -12,7 +12,7 @@ namespace Ciphers
         String morseText = "";
         String userInput = "";
 
-        public Form1()
+        public CipherForm()
         {
             InitializeComponent();
             saveButton.Enabled = false;
@@ -64,8 +64,11 @@ namespace Ciphers
                 {
                     isMorse = false;
                 }
+                if (text.Length > 5 && !text.Contains("/"))
+                {
+                    isMorse = false;
+                }
             }
-
             if (isMorse)
             {
                 morseText = DecryptMorse(text);
@@ -107,7 +110,8 @@ namespace Ciphers
             {
                 MessageBox.Show("Please enter less than 200 characters");
                 return;
-            } else if (!CheckSafe(userInput))
+            }
+            else if (!CheckSafe(userInput))
             {
                 MessageBox.Show("Please enter only letters, numbers, spaces, periods, hyphens, and slashes");
                 return;
@@ -138,7 +142,11 @@ namespace Ciphers
             userInputBox.Enabled = true;
             encryptButton.Enabled = true;
             decryptButton.Enabled = true;
-            saveButton.Enabled = true;
+            saveButton.Enabled = false;
+            caesarOutput.Text = string.Empty;
+            keyboardOutput.Text = string.Empty;
+            morseOutput.Text = string.Empty;
+            binaryOutput.Text = string.Empty;
         }
 
         static Boolean CheckSafe(String text)
@@ -264,6 +272,11 @@ namespace Ciphers
                 {".----", '1'}, {"..---", '2'}, {"...--", '3'}, {"....-", '4'}, {".....", '5'}, {"-....", '6'}, {"--...", '7'},
                 {"---..", '8'}, {"----.", '9'}, {"-----", '0' }
             };
+            if (text.EndsWith("/"))
+            {
+                text = text[..^1];
+            }
+            Debug.WriteLine(text);
             String[] words = text.Split(" ");
             String[] stringWords = [];
 
@@ -318,5 +331,6 @@ namespace Ciphers
                 file.Close();
             }
         }
+
     }
 }
